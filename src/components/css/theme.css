@@ -1,0 +1,40 @@
+/* theme.css */
+
+/* Light Theme */
+:root {
+    --bg-color: #ffffff;
+    /* Background color for light theme */
+    --text-color: #333333;
+    /* Text color for light theme */
+    --button-bg: #007bff;
+    /* Button background color for light theme */
+    --button-hover-bg: #0056b3;
+    /* Button hover color for light theme */
+}
+
+/* Dark Theme */
+[data-theme='dark'] {
+    --bg-color: #121212;
+    /* Background color for dark theme */
+    --text-color: #ffffff;
+    /* Text color for dark theme */
+    --button-bg: #1e88e5;
+    /* Button background color for dark theme */
+    --button-hover-bg: #1976d2;
+    /* Button hover color for dark theme */
+}
+
+/* Applying these variables in your App styles */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+button {
+    background-color: var(--button-bg);
+    color: white;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+}

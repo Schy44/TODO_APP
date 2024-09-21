@@ -1,0 +1,142 @@
+/* Default Light Theme (Root) */
+:root {
+    --primary-color: #1976d2;
+    /* Default primary color (blue) */
+    --accent-color: #e3f2fd;
+    /* Light background color */
+    --border-radius: 8px;
+    /* Border radius for elements */
+    --text-color-light: #000;
+    /* Text color for light theme */
+    --bg-color-light: #f9fafb;
+    /* Light background for calendar days */
+}
+
+/* Calendar Styling */
+.calendar-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /* Always 7 columns for each day of the week */
+    gap: 6px;
+    /* Reduced gap between cells to use space efficiently */
+    padding: 10px;
+    /* Reduced padding */
+    background-color: var(--accent-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 360px;
+}
+
+/* Calendar Day */
+.calendar-day {
+    background-color: var(--bg-color-light);
+    /* Lighter background for light theme */
+    border-radius: 8px;
+    padding: 8px;
+    /* Reduced padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    /* Softer shadow */
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    min-height: 70px;
+    /* Reduced height to make the calendar more compact */
+}
+
+.calendar-day:hover {
+    transform: translateY(-2px);
+    background-color: #eceff1;
+    /* Soft hover color */
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.calendar-day.today {
+    border: 2px solid var(--primary-color);
+    background-color: #bbdefb;
+    /* Lighter blue for today */
+    color: black;
+}
+
+.calendar-day.overdue {
+    background-color: #ef9a9a;
+    /* Lighter red for overdue tasks */
+    color: white;
+}
+
+.calendar-day.inactive {
+    background-color: #f0f0f0;
+    /* Light gray for inactive days */
+    color: #b0b0b0;
+    pointer-events: none;
+}
+
+/* Day Number */
+.calendar-day .day-number {
+    font-size: 16px;
+    /* Slightly reduced font size */
+    font-weight: bold;
+    margin-bottom: 3px;
+    /* Reduced margin */
+}
+
+/* Task List in Calendar */
+.calendar-day .task-list {
+    margin-top: 3px;
+    /* Reduced margin */
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.calendar-day .task-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+    font-size: 12px;
+    /* Reduced font size */
+}
+
+/* Task Icons */
+.task-icon {
+    margin-right: 4px;
+    /* Reduced icon spacing */
+}
+
+.completed-icon {
+    color: #4caf50;
+}
+
+.pending-icon {
+    color: #ffcc00;
+}
+
+.overdue-icon {
+    color: #ff5555;
+}
+
+/* Dark Mode */
+:root[data-theme='dark'] {
+    --primary-color: #90caf9;
+    --accent-color: #555;
+    --bg-color-light: #444;
+    /* Dark background for calendar days */
+    --text-color-light: #fff;
+    /* Text color for dark theme */
+}
+
+.calendar-day {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.calendar-day.today {
+    background-color: var(--primary-color);
+    color: white;
+}
